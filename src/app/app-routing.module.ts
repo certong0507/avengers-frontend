@@ -11,8 +11,8 @@ import { PageNotFoundPage } from './modules/page-not-found/page-not-found.page';
 
 const routes: Routes = [
     {
-        path: '',
-        canActivate: [AuthGuard],
+        path: 'dashboard',
+        // canActivate: [AuthGuard],
         component: HomePage,
         children: [
             { path: 'dashboard', component: DashboardPage },
