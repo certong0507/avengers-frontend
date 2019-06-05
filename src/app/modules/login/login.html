@@ -1,0 +1,41 @@
+<div class="fade-in">
+    <div style="text-align:center">
+        <h1>Login to {{ title }}</h1>
+    </div>
+    <div class="login-form-wrap">
+        <form [formGroup]="loginForm">
+            <clr-input-container>
+                <input clrInput
+                       class="w-100"
+                       placeholder="Username"
+                       formControlName="username" />
+            </clr-input-container>
+            <clr-password-container>
+                <input clrPassword
+                       class="w-100"
+                       placeholder="Password"
+                       formControlName="password" />
+            </clr-password-container>
+            <button class="btn btn-primary mt-2"
+                    (click)="onClickLogin()">
+                Login
+            </button>
+            <div [ngClass]="{ show: loginFailed }"
+                 class="alert alert-app-level alert-danger mt-2 fade"
+                 style="margin-bottom:24px"
+                 role="alert">
+                <div class="alert-items">
+                    <div class="alert-item static">
+                        <div class="alert-icon-wrapper">
+                            <clr-icon class="alert-icon"
+                                      shape="exclamation-circle"></clr-icon>
+                        </div>
+                        <div class="alert-text">
+                            {{ loginFailedErrorMessage }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

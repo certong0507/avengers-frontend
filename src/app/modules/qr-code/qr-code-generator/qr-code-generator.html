@@ -1,0 +1,13 @@
+<div class="fade-in">
+   <div style="text-align:center">
+      <h2>QR Code Generator</h2>
+   </div>
+   <button class="btn btn-primary btn-block mt-2"
+           (click)="onGenerateQRCode()">Generate QR Code</button>
+   <div class="qr-code-wrapper">
+      <qrcode *ngIf="qrCodeData.length > 0"
+              [qrdata]="qrCodeData"
+              [usesvg]=true
+              [level]="'M'"></qrcode>
+   </div>
+</div>

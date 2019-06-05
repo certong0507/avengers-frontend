@@ -1,0 +1,33 @@
+<div class="fade-in">
+   <div style="text-align:center">
+      <h2>QR Code Reader</h2>
+   </div>
+   <div>
+      <div>
+         <!-- <canvas id="scan-canvas"
+                 style="height: auto; width: 100%;">
+         </canvas> -->
+         <div>
+            <div id="output">
+               <h3 id="outputMessage">No QR code detected.</h3>
+               <div hidden="">
+                  <h3>Data:</h3>
+                  <h3 id="outputData">{{ qrcodeDetected }}</h3>
+               </div>
+            </div>
+         </div>
+         <clr-modal [(clrModalOpen)]="validUser">
+            <div class="modal-body">
+               <clr-icon shape="user"
+                         class="is-success"
+                         size="48"></clr-icon>
+            </div>
+            <div class="modal-footer">
+               <button type="button"
+                       class="btn btn-primary btn-block "
+                       (click)="validUser = false"> Ok </button>
+            </div>
+         </clr-modal>
+      </div>
+   </div>
+</div>
