@@ -1,19 +1,21 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import moment from 'moment';
 
 @Component({
-   selector: 'qr-code-generator',
-   templateUrl: './qr-code-generator.html',
-   styleUrls: ['./qr-code-generator.scss']
+    selector: 'qr-code-generator',
+    templateUrl: './qr-code-generator.html',
+    styleUrls: ['./qr-code-generator.scss'],
 })
 export class QRCodeGeneratorPage {
-   qrCodeData: string;
+    qrData: string;
+    qrCodeForm = new FormGroup({
+        qrCodeText: new FormControl(''),
+    });
 
-   constructor() {
-      this.qrCodeData = '';
-   }
+    constructor() {}
 
-   onGenerateQRCode() {
-      this.qrCodeData = `Current time : ${moment().format('hh:mm:ss')}.`
-   }
+    onGenerateQRCode() {
+      this.qrData = this.qrCodeForm.get('qrCodeText').value
+    }
 }

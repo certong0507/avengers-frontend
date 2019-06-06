@@ -2,11 +2,21 @@
    <div style="text-align:center">
       <h2>QR Code Generator</h2>
    </div>
+   <form clrForm
+         [formGroup]="qrCodeForm">
+      <clr-input-container>
+         <label>Text to generate in QR code</label>
+         <input clrInput
+                style="width: 100%"
+                placeholder="QR Code Text"
+                formControlName="qrCodeText" />
+      </clr-input-container>
+   </form>
    <button class="btn btn-primary btn-block mt-2"
            (click)="onGenerateQRCode()">Generate QR Code</button>
    <div class="qr-code-wrapper">
-      <qrcode *ngIf="qrCodeData.length > 0"
-              [qrdata]="qrCodeData"
+      <qrcode *ngIf="qrData"
+              [qrdata]="qrData"
               [usesvg]=true
               [level]="'M'"></qrcode>
    </div>
