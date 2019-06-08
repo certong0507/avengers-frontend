@@ -5,15 +5,32 @@
    <form clrForm
          [formGroup]="qrCodeForm">
       <clr-input-container>
-         <label>Text to generate in QR code</label>
+         <label>Text to Generate: </label>
          <input clrInput
-                style="width: 100%"
+                class="w-100"
                 placeholder="QR Code Text"
                 formControlName="qrCodeText" />
       </clr-input-container>
+      <button class="btn btn-primary btn-block mt-1"
+              (click)="handleGenerateQRCode()">Generate</button>
+
+      <div class="alert alert-danger"
+           *ngIf="geolocationErrorMessage"
+           role="alert">
+         <div class="alert-items">
+            <div class="alert-item static">
+               <div class="alert-icon-wrapper">
+                  <clr-icon class="alert-icon"
+                            shape="exclamation-circle"></clr-icon>
+               </div>
+               <span class="alert-text">
+                  {{geolocationErrorMessage}}
+               </span>
+            </div>
+         </div>
+      </div>
    </form>
-   <button class="btn btn-primary btn-block mt-2"
-           (click)="onGenerateQRCode()">Generate QR Code</button>
+
    <div class="qr-code-wrapper">
       <qrcode *ngIf="qrData"
               [qrdata]="qrData"

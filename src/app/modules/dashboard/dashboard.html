@@ -2,4 +2,15 @@
     <div style="text-align:center">
         <h1>Dashboard</h1>
     </div>
+    <form clrForm
+          [formGroup]="newHeroForm">
+        <clr-input-container>
+            <label>New Hero Name: </label>
+            <input clrInput
+                   class="w-100"
+                   placeholder="Hero Name"
+                   formControlName="heroName">
+        </clr-input-container>
+        <button class="btn btn-primary btn-block mt-1" (click)="handleAddHero()" >Add</button>
+    </form>
 </div>

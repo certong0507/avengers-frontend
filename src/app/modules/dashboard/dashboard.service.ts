@@ -1,24 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-// import { catchError } from 'rxjs/operators';
 
 import { environment } from '../../../environments/environment';
 
 @Injectable({
     providedIn: 'root',
 })
-export class LoginService {
+export class DashboardService {
     private API_URL = environment.apiUrl;
 
     constructor(private http: HttpClient) {}
 
-    doLogin(username: string, password: string): Observable<any> {
+    addHero(name: string): Observable<any> {
         return this.http.post(
-            `${this.API_URL}/heroes/login`,
+            `${this.API_URL}/heroes/add-hero`,
             {
-                username,
-                password,
+                name,
             },
             {
                 headers: new HttpHeaders({
