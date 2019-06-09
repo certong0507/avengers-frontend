@@ -28,16 +28,23 @@
          <li class="nav-item">
             <a href="javascript://"
                (click)="navToQRGenerator()"
-               routerLink="/qr/generator"
+               routerLink="/qrcode/generator"
                routerLinkActive="active"
                class="nav-link nav-text">QR Code Generator</a>
          </li>
          <li class="nav-item">
             <a href="javascript://"
                (click)="navToQRReader()"
-               routerLink="/qr/reader"
+               routerLink="/qrcode/reader"
                routerLinkActive="active"
                class="nav-link nav-text">QR Code Reader</a>
+         </li>
+         <li class="nav-item">
+            <a href="javascript://"
+               (click)="navToBarcodeReader()"
+               routerLink="/barcode/reader"
+               routerLinkActive="active"
+               class="nav-link nav-text">Barcode Reader</a>
          </li>
       </ul>
    </nav>

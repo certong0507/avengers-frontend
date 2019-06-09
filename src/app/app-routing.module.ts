@@ -7,6 +7,7 @@ import { HomePage } from './modules/home/home.page';
 import { DashboardPage } from './modules/dashboard/dashboard.page';
 import { QRCodeGeneratorPage } from './modules/qr-code/qr-code-generator/qr-code-generator.page';
 import { QRCodeReaderPage } from './modules/qr-code/qr-code-reader/qr-code-reader.page';
+import { BarcodeReaderPage } from './modules/barcode/barcode-reader/barcode-reader.page';
 import { PageNotFoundPage } from './modules/page-not-found/page-not-found.page';
 
 const routes: Routes = [
@@ -16,8 +17,9 @@ const routes: Routes = [
         component: HomePage,
         children: [
             { path: 'dashboard', component: DashboardPage },
-            { path: 'qr/generator', component: QRCodeGeneratorPage },
-            { path: 'qr/reader', component: QRCodeReaderPage },
+            { path: 'qrcode/generator', component: QRCodeGeneratorPage },
+            { path: 'qrcode/reader', component: QRCodeReaderPage },
+            { path: 'barcode/reader', component: BarcodeReaderPage },
         ],
     },
 

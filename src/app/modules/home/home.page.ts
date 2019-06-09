@@ -21,10 +21,14 @@ export class HomePage {
     }
 
     navToQRGenerator() {
-        this.router.navigate(['qr/generator']);
+        this.router.navigate(['qrcode/generator']);
     }
 
     navToQRReader() {
-        this.router.navigate(['qr/reader']);
+        this.router.navigate(['qrcode/reader']);
+    }
+
+    navToBarcodeReader() {
+        this.router.navigate(['barcode/reader']);
     }
 }

@@ -4,18 +4,12 @@
    </div>
    <div>
       <div>
+         <div>
+            <h3 id="outputData">Data: {{ qrcodeResult }}</h3>
+         </div>
          <canvas id="scan-canvas"
                  style="height: auto; width: 100%;">
          </canvas>
-         <div>
-            <div id="output">
-               <h3 id="outputMessage">No QR code detected.</h3>
-               <div hidden="">
-                  <h3>Data:</h3>
-                  <h3 id="outputData">{{ qrcodeDetected }}</h3>
-               </div>
-            </div>
-         </div>
          <clr-modal [(clrModalOpen)]="validUser">
             <div class="modal-body">
                <clr-icon shape="user"
